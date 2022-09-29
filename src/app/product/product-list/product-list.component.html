@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-header">
+    <div class="card-header">Lista de Productos
     </div>
 
     <div class="card-body">
@@ -7,7 +7,7 @@
             <div class="col-md-2">Filtrar por:</div>
             <div class="col-md-4">
                 
-                <input type="text" class="form-control" name="filter">
+                <input [(ngModel)]="listfilter" type="tet" class="form-control" name="filter">
             </div>
         </div>
         <div class="row">
@@ -16,12 +16,12 @@
             </div>
         </div>
         <div class="table-responsive">
-            <table class="table" id="tabla">
+            <table class="table" id="tabla" *ngIf="products.length">
                 <thead>
                     <tr>
                         <th>
                             
-                            <button [(ngModel)]="listFilter" type="button" class="btn btn-primary">Mostrar imagen</button>
+                            <button (click)="muestraImagen()" type="button" class="btn btn-primary">{{muestraImg? 'Ocultar Imagen':'Mostrar Imagen'}}</button>
                         </th>
                         <th>Nombre</th>
                         <th>Descripcion</th>
@@ -32,9 +32,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let product of products">
+                    <tr *ngFor="let product of products | productoFilter:listfilter">
                         <td>
-                            <img [src]="product.MuestraImagen"
+                            <img *ngIf="muestraImg" 
+                            [src]="product.imageUrl"
                             [title]="product.productName"
                             [style.width.px]="imagewidth"
                             [style.margin.px]="imageMarge"

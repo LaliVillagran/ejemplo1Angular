@@ -1,13 +1,18 @@
-<div>
-    Numero1: <input type="text" [(ngModel)]="numero1" name="numero1"><br>
-    Numero2: <input type="text" [(ngModel)]="numero2" name="numero2"><br>
-    <h2>Para que la operación sea valida ingresa en la siguiente casilla:</h2>
-    <p>"sum" = para sumar</p>
-    <p>"res" = para restar</p>
-    <p>"multi" = para multiplicar</p>
-    <p>"div" = para dividir</p>
-    Operacion: <input type="text" [(ngModel)]="Option" name="numero2"><br>
-    
-    <button type="button" (click)="calcular()">Calcular</button>
-    <h1>{{total}}</h1>
+
+<div class="card">
+    <div class="card-header">Calculadora
+        <div>
+            Numero1: <input type="text" [(ngModel)]="numero1" name="numero1"><br>
+            Numero2: <input type="text" [(ngModel)]="numero2" name="numero2"><br>
+            <h2>Para que la operación sea valida ingresa en la siguiente casilla:</h2>
+            <p>"sum" = para sumar</p>
+            <p>"res" = para restar</p>
+            <p>"multi" = para multiplicar</p>
+            <p>"div" = para dividir</p>
+            Operacion: <input type="text" [(ngModel)]="Option" name="numero2"><br>
+            
+            <button type="button" (click)="calcular()">Calcular</button>
+            <h1>{{total}}</h1>
+        </div>
+    </div>
 </div>

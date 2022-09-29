@@ -8,17 +8,13 @@ import { Producto } from '../producto';
 })
 export class ProductListComponent implements OnInit {
 
-  imagewidth:number=50;
-  imageMarge:number=2;
+  imagewidth:number=100;
+  imageMarge:number=3;
   muestraImg:boolean=false;
+  listfilter:string='';
 
-  muestraImagen():void{
-    if (this.muestraImg){
-      this.muestraImg=false;
-     
-  }else{
-    this.muestraImg=true;
-  }
+  muestraImagen():void{ 
+      this.muestraImg=!this.muestraImg;
   }
   constructor() { }
 
@@ -31,12 +27,20 @@ export class ProductListComponent implements OnInit {
     "createDate":"Mayo 21, 2011",
     "precio":430000,
     "rating":4.8,
-    "imageUrl":"https://www.google.com/search?q=centra&rlz=1C1UUXU_esMX1022MX1022&sxsrf=ALiCzsbD-EZ_mEUuK0jO_Q_jZwvFtFcU9w:1663971906784&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiV262z-qv6AhVTC0QIHQy_BMwQ_AUoAnoECAMQBA#imgrc=9ZegAc89_OFnSM"
-    }
-  ]
+    "imageUrl":"https://www.nissan.com.mx/content/dam/Nissan/mexico/assets/sentra/my21/vap/nissan-2021-sentra_sense_tm-d.jpeg.ximg.l_12_m.smart.jpeg"
+    },
 
-  listFilter(){
-  }
+    {
+      "product1":2,
+      "productName":'Tsuru tuneado',
+      "description": 'auto familiar 2 paps',
+      'listFilter':"",
+      "createDate":"Septiembre 11, 2003",
+      "precio":20000,
+      "rating":2.0,
+      "imageUrl":"https://tuningcar.mx/wp-content/uploads/2021/02/fotos-coches-tuneados-1-1024x768.jpg"
+      }
+  ]
 
 
   ngOnInit(): void {
