@@ -9,13 +9,14 @@ import { CalcuComponent } from './calculos/calcu/calcu.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { ProductoFilterPipe } from './product/producto-filter.pipe';
 import { MenuComponent } from './menu/menu.component';
-import { RestaComponent } from './resta/resta.component';
-import { SumaComponent } from './suma/suma.component';
+import { RestaComponent } from './calculos/resta/resta.component';
+import { SumaComponent } from './calculos/suma/suma.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule} from '@angular/material/icon';
 import { MatButtonModule} from '@angular/material/button';
+import { TablaComponent } from './Calculos/tabla/tabla.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MatButtonModule} from '@angular/material/button';
     SumaComponent,
     ProductListComponent,
     ProductoFilterPipe,
-    MenuComponent
+    MenuComponent,
+    TablaComponent
   ],
   imports: [
     BrowserModule,
