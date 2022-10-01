@@ -10,15 +10,17 @@ export class CompraDeBoletosComponent implements OnInit {
   targetaCine:boolean=false;
   boleto:number;
   usuarioNombre;
+  compradores:number;
 
   valorCompraPorcentaje:number;
   descuentoAdicional:number;
   precioxBoleto:number;
   valorCompra:number;
-  valorCompraFinal:number;
+  valorCompraFinal:number = 0;
   precioBoleto:number=12.00;
   simbolo:string = '$';
   limiteBoleto:string;
+  loSentimos:string;
 
   constructor() { }
 
@@ -34,33 +36,37 @@ export class CompraDeBoletosComponent implements OnInit {
         this.descuentoAdicional = this.precioBoleto * .10;
         if(this.boleto>5, this.boleto<8)
       {
-        this.precioxBoleto = this.boleto * this.precioBoleto
+        this.precioxBoleto = (this.compradores * this.boleto ) * this.precioBoleto
 
         this.valorCompraPorcentaje = this.precioxBoleto * .15;
 
         this.valorCompraFinal = this.precioxBoleto - this.valorCompraPorcentaje - this.descuentoAdicional;
+        this.loSentimos = '';
       } 
 
       if(this.boleto==3, this.boleto==4, this.boleto==5)
       {
-        this.precioxBoleto = this.boleto * this.precioBoleto
+        this.precioxBoleto = (this.compradores * this.boleto ) * this.precioBoleto
 
         this.valorCompraPorcentaje = this.precioxBoleto * .10;
 
         this.valorCompraFinal = this.precioxBoleto - this.valorCompraPorcentaje;
       } 
 
-      if(this.boleto==1, this.boleto==2)
+      if(this.boleto==2)
       {
-        this.precioxBoleto = this.boleto * this.precioBoleto
+        this.valorCompraFinal = (this.compradores * this.boleto ) * this.precioBoleto
 
-        this.valorCompraFinal = this.precioxBoleto;
+        
+      } 
+      if(this.boleto==1){
+        this.valorCompraFinal = (this.compradores * this.boleto ) * this.precioBoleto
       } 
 
-      if(this.boleto>7)
+      if(this.boleto>=8)
       {
-       
-        console.log('Lo siento, pasaste el limite de boletos por persona, intentalo de nuevo');
+          this.loSentimos = 'Lo sentimos, excedio la cantidad de boletos por persona';
+          this.valorCompraFinal = 0.0;
       } 
         break;
 
@@ -69,38 +75,42 @@ export class CompraDeBoletosComponent implements OnInit {
       default:
         if(this.boleto>5, this.boleto<8)
       {
-        this.precioxBoleto = this.boleto * this.precioBoleto
+        this.precioxBoleto = (this.compradores * this.boleto ) * this.precioBoleto
 
         this.valorCompraPorcentaje = this.precioxBoleto * .15;
 
         this.valorCompraFinal = this.precioxBoleto - this.valorCompraPorcentaje;
+        this.loSentimos = '';
       } 
       
       if(this.boleto==3, this.boleto==4, this.boleto==5)
       {
-        this.precioxBoleto = this.boleto * this.precioBoleto
+        this.precioxBoleto = (this.compradores * this.boleto ) * this.precioBoleto
 
         this.valorCompraPorcentaje = this.precioxBoleto * .10;
 
         this.valorCompraFinal = this.precioxBoleto - this.valorCompraPorcentaje;
       } 
 
-      if(this.boleto==1, this.boleto==2)
+      if(this.boleto==2)
       {
-        this.precioxBoleto = this.boleto * this.precioBoleto
+        this.valorCompraFinal = (this.compradores * this.boleto ) * this.precioBoleto
 
-        this.valorCompraFinal = this.precioxBoleto;
+        
       } 
+      if(this.boleto==1){
+        this.valorCompraFinal = (this.compradores * this.boleto ) * this.precioBoleto
+        this.loSentimos = '';
+      }
 
-      if(this.boleto>7)
+      if(this.boleto>=8)
       {
-        console.log('Lo siento, pasaste el limite de boletos por persona, intentalo de nuevo');
+        this.loSentimos = 'Lo sentimos, excedio la cantidad de boletos por persona';
+        this.valorCompraFinal = 0;
       } 
         break;
         
-     } 
-        
-    
+     }   
   }
 
 }

@@ -25,14 +25,13 @@
                         alt="Cinepolis Logo"
                         src="https://www.roc21.com/blog/wp-content/uploads/2019/07/logo-cinepolis-dos.jpg"
                         />
-            
+                    
                 <span class="fa-align-center" aria-hidden="true"><h1>CINEPOLIS</h1></span>
             
                 </div>
 
             </div>
                 
-            <p>Prueba</p>
 
             <div >
 
@@ -41,12 +40,18 @@
                             
                             <input  [(ngModel)]="usuarioNombre" type="tet" class="form-control" name="input_Nombre">
                         </div>
-            
+                    <br>
+                    Cantidad compradores:
+                        <div >
+                            
+                            <input [(ngModel)]="compradores"  type="tet" class="form-control" name="input_Nombre">
+                        </div>
+                    <br>
 
                     Cantidad de boletos:
                         <div >
                             
-                            <input [(ngModel)]="boleto"  type="tet" class="form-control" name="input_Nombre">
+                            <input [(ngModel)]="boleto"   type="tet" class="form-control" name="input_Nombre">
                         </div>
                     <br>
                     <div class="col">
@@ -55,9 +60,9 @@
 
                     <div>
                         <br>
-                        <h3>¿Pagar con tarjeta CINECO?</h3>
+                        <h2>¿Pagar con tarjeta CINECO?</h2>
                         <div class="col-lg-13" >
-                        <h6>Selecciona check para aceptar: </h6>
+                        <h4>Selecciona check para aceptar: </h4>
                         </div>
                         <input class="col-lg-13" type="checkbox" name="input_Tarjeta" [(ngModel)]="targetaCine" > 
                         <!-- No<input class="col-lg-1" type="radio" name="input_Tarjeta" [(ngModel)]="targetaCine"> -->   
@@ -69,7 +74,8 @@
         <br>
         <div>
             <h4>Estimado {{usuarioNombre}}, usted va a pagar:<br> </h4>
-            <h2>{{simbolo}} {{valorCompraFinal}} </h2>
+            <h2> {{loSentimos}} </h2>
+            <h2>{{simbolo}} {{valorCompraFinal}}</h2>
             
         </div>
 
